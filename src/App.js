@@ -24,10 +24,13 @@ try {
 
   return (
     <div className="App">
-      <header className="App-header">
+      <header >
        <AmplifySignOut/>
        <h2>My app Content</h2>
       </header>
+      {media.map((item,i)=>{
+        return(<div key ={i}><h2>{item.Title}</h2></div>)
+      })}
     </div>
   );
 }
