@@ -1,0 +1,6 @@
+type Media @model {
+  id: ID!
+  Title: String!
+  description: String!
+
+}

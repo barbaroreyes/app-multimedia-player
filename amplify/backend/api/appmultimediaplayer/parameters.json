@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "appmultimediaplayer",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authappmultimediaplayere5cec547",
+      "Outputs.UserPoolId"
+    ]
+  }
+}
