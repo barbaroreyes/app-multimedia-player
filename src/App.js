@@ -4,10 +4,13 @@ import awsconfig from "./aws-exports";
 import {AmplifySignOut,withAuthenticator} from '@aws-amplify/ui-react'
 import {listMedias} from './graphql/queries';
 import {updateMedia} from './graphql/mutations';
-import {Paper,IconButton,} from '@material-ui/core';
+import {Paper,IconButton,TextField} from '@material-ui/core';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow'
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import  PauseIcon from '@material-ui/icons/Pause';
+import  AddIcon from '@material-ui/icons/Add';
+import PublishIcon  from '@material-ui/icons/Publish';
+
 import ReactPlayer from 'react-player';
 
 import './App.css';
@@ -17,6 +20,7 @@ function App() {
   const [medias,setMedia] =useState([])
   const [mediaPlaying,setMediaPlaying] = useState('')
   const [mediaUrl,setMediaUrl]= useState('')
+  const [shoWAddMedia,setShoWAddMedia] = useState(false)
   useEffect(()=>{
     getAll()
   },[])
@@ -115,9 +119,38 @@ try {
           }
           </Paper>)
       })}
+      {
+        shoWAddMedia?(
+          <AddMedia onUpload={() =>{
+            setShoWAddMedia(false) 
+            getAll()
+          }}/>
+        ):<IconButton onClick={()=> setMediaPlaying()}>
+          <AddIcon/>
+          </IconButton>
+      }
       </div>
     </div>
   );
 }
 
 export default withAuthenticator(App);
+
+
+const AddMedia = ({onUpload}) => {
+  const uploadMedia = ()=>{
+    onUpload();
+  }
+  return (
+    <div className="newMedia">
+      <TextField label="Title"/>
+      <TextField label="Artist"/>
+      <TextField label="Description"/>
+     <IconButton onClick ={uploadMedia}>
+       <PublishIcon/>
+     </IconButton>
+        
+     
+    </div>
+  )
+}
