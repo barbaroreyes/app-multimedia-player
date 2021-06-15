@@ -100,7 +100,16 @@ try {
           </div>
           {
           
-          
+          mediaPlaying === id ?(
+            <div>
+              <ReactPlayer
+              url={mediaUrl}
+              control
+              height='50px'
+              onpause={()=>toggleMedia(i)}
+              />
+            </div>
+          ): null
           }
           </Paper>)
       })}
