@@ -3,13 +3,14 @@ import Amplyfy, { API, graphqlOperation } from 'aws-amplify';
 import awsconfig from "./aws-exports";
 import {AmplifySignOut,withAuthenticator} from '@aws-amplify/ui-react'
 import {listMedias} from './graphql/queries';
+import {updateMedia} from './graphql/mutations';
 import {Paper,IconButton,} from '@material-ui/core';
 import PlayArrow from '@material-ui/icons/PlayArrow'
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import './App.css';
 Amplyfy.configure(awsconfig)
 function App() {
-  const [media,setMedia] =useState([])
+  const [medias,setMedia] =useState([])
   useEffect(()=>{
     getAll()
   },[])
@@ -24,7 +25,23 @@ try {
   console.log('error',error)
 }
 }
+const addLike = async(id) =>{
+try {
+  const media = medias[id]
+  media.like= media.like + 1
+  delete media.createdAt;
+  delete media.updatedAt;
 
+
+  const mediaData = await API.graphql(graphqlOperation(updateMedia,{input:media}))
+  const mediaList = [...medias]
+ mediaList[id] = mediaData.data.updateMedia;
+ setMedia(mediaList)
+
+} catch (error) {
+  console.log('error on addLike function',error)
+}
+}
   return (
     <div className="App">
       <header className='App-header'>
@@ -32,7 +49,7 @@ try {
        <h2>My app Content</h2>
       </header>
       <div className='mediaList'>
-      {media.map((item,i)=>{
+      {medias.map((item,i)=>{
         return(<Paper 
           variant="outlined"
           elevation={2} 
@@ -46,7 +63,7 @@ try {
           <div className='owner'>{item.owner}</div>
           </div>
           <div>
-          <IconButton aria-label='like'>
+          <IconButton aria-label='like' onClick ={()=>{addLike(i)}}>
               <FavoriteIcon/>
           </IconButton>
           {item.like}
