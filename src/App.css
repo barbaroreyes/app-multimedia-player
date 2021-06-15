@@ -38,6 +38,10 @@
 }
 .Title{
   font-weight: bold;
-  
+
+}
+.media-player-box{
+  display: flex;
+  justify-content: center;
 }
 

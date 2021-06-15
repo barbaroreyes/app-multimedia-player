@@ -8,6 +8,8 @@ import {Paper,IconButton,} from '@material-ui/core';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow'
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import  PauseIcon from '@material-ui/icons/Pause';
+import ReactPlayer from 'react-player';
+
 import './App.css';
 Amplyfy.configure(awsconfig)
 
@@ -100,13 +102,13 @@ try {
           </div>
           {
           
-          mediaPlaying === id ?(
-            <div>
+          mediaPlaying === i ?(
+            <div className ='media-player-box'>
               <ReactPlayer
               url={mediaUrl}
-              control
+              controls
               height='50px'
-              onpause={()=>toggleMedia(i)}
+              onPause={()=>toggleMedia(i)}
               />
             </div>
           ): null
