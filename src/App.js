@@ -86,8 +86,6 @@ try {
           <div className='description'>
            {item.description}
           </div>
-         
-
           </div>
           </Paper>)
       })}
