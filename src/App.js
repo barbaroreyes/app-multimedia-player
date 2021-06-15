@@ -1,5 +1,5 @@
 import React ,{useState,useEffect}from 'react'
-import Amplyfy, { API, graphqlOperation } from 'aws-amplify';
+import Amplyfy, { API, graphqlOperation,Storage } from 'aws-amplify';
 import awsconfig from "./aws-exports";
 import {AmplifySignOut,withAuthenticator} from '@aws-amplify/ui-react'
 import {listMedias} from './graphql/queries';
@@ -14,7 +14,7 @@ Amplyfy.configure(awsconfig)
 function App() {
   const [medias,setMedia] =useState([])
   const [mediaPlaying,setMediaPlaying] = useState('')
-  
+  const [mediaUrl,setMediaUrl]= useState('')
   useEffect(()=>{
     getAll()
   },[])
@@ -23,8 +23,19 @@ function App() {
       setMediaPlaying('')
       return 
     }
-    setMediaPlaying(id)
+    const mediaFilePath= medias[id].filePath;
+    try {
+      const fileAccesUrl = await Storage.get(mediaFilePath,{expires:60})
+      console.log("fileAcces Url",fileAccesUrl)
+      setMediaPlaying(id)
+      setMediaUrl(fileAccesUrl);
     return
+    } catch (error) {
+      console.log('error from s3 ',error)
+      setMediaPlaying('')
+      setMediaUrl('');
+    }
+    
   }
 
 
@@ -87,6 +98,10 @@ try {
            {item.description}
           </div>
           </div>
+          {
+          
+          
+          }
           </Paper>)
       })}
       </div>
