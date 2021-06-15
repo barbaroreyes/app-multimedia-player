@@ -76,10 +76,11 @@ try {
 }
 }
   return (
-    <div className="App">
-      <header className='App-header'>
-       <AmplifySignOut/>
-       <h2>My app Content</h2>
+    <div className="App ">
+      <header className='App-header bg-black'>
+      
+       <AmplifySignOut />
+      
       </header>
       <div className='mediaList'>
       {medias.map((item,i)=>{
@@ -112,7 +113,7 @@ try {
               <ReactPlayer
               url={mediaUrl}
               controls
-              height='50px'
+              height='300px'
               onPause={()=>toggleMedia(i)}
               />
             </div>
