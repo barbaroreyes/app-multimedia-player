@@ -6,13 +6,16 @@ import {listMedias} from './graphql/queries'
 import './App.css';
 Amplyfy.configure(awsconfig)
 function App() {
+  const [media,setMedia] =useState([])
   useEffect(()=>{
     getAll()
   },[])
 const getAll = async() =>{
 try {
   const mediaData = await API.graphql(graphqlOperation(listMedias))
-  console.log(mediaData)
+  const mediaList = mediaData.data.listMedias.items
+  console.log('media list',mediaList)
+  setMedia(mediaList)
   console.log()
 } catch (error) {
   console.log('error',error)
