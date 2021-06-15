@@ -1,70 +1,127 @@
-# Getting Started with Create React App
+# Project Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**PROJECT NAME:** video-player
 
-## Available Scripts
+**PROJECT AUTHOR:** Barbaro Reyes
 
-In the project directory, you can run:
+## Project Schedule
 
-### `yarn start`
+This schedule will be used to keep track of your progress throughout the week and align with our expectations.  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+You are **responsible** for scheduling time with your squad to seek approval for each deliverable by the end of the corresponding day, excluding `Saturday` and `Sunday`.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+|  Day | Deliverable | Status
+|---|---| ---|
+|Day 1| Project Description | completed
+|Day 1| Wireframes / Priority Matrix / Timeline | completed
+|Day 3| Core Application Structure (HTML, CSS, etc.) | complete
+|Day 4| MVP & Bug Fixes | complete
+|Day 5| Final Touches | complete
+|Day 6| Present | Incomplete
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Description
+dis app show many way to enjoy waching tv
 
-### `yarn build`
+## Google Sheet
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+https://docs.google.com/spreadsheets/d/1Ni_GyfAJSOjG4CN5CK3YO-ruB7rCRCh-aCDulo3q_UE/edit#gid=0
+## Portfolio I want to Emulate
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Search and compare at least 3 profile web sites.  Record your findings in the table below and include some aspect of the site that you would like to incorporate into your own site.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Link To Site  | One Thing I'd Like To Incorporate | 
+| ------------- | ------------- |
+| [barbaro.com](https://main.d2eijepo1nx9t1.amplifyapp.com/)| 
 
-### `yarn eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Wireframes
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe. Do not include the actual image and have it render on the page.  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- [React-Aquitecture](https://imgur.com/zjDemM8)
+- [Movil](https://imgur.com/KxmKa2D)
 
-## Learn More
+Wireframing Resources:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Time/Priority Matrix 
 
-### Analyzing the Bundle Size
+[Link](https://imgur.com/2qxX3xR)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Include a full list of features that have been prioritized based on the `Time and Priority` Matix.  This involves drawing a a square.  In the middle of the square, on the x axis draw a line.  The most left part of the line should start with 0hrs and the end of the line should include 2hrs.  This line will be used to estimate how much time any one feature will take to complete. 
 
-### Making a Progressive Web App
+Now draw a vertical line on the y axis.  The top of this line should have `High` and the bottom `Low`.  This line will be used to assign a priority to to each feature you wish to include in the project.  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Now create a separate list starting with A and assign it one of the features.  Continue to assign each feature a letter.  Once complete add each letter to the matrix assigning based on what your feel it's prioirty is an how long it will take to implement. If any one feature takes longer than 2hrs to complete than break it down into smaller tasks and reassign them a new letter. 
 
-### Advanced Configuration
+Once complete tally up the time and determine how long the project will take to complete. Now break those features into MVP and PostMVP so you can guarantee you will have a fully functioning project to demo. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### MVP/PostMVP - 5min
 
-### Deployment
+The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+#### MVP (examples)
 
-### `yarn build` fails to minify
+- Pull data using google json api
+- Render data on page 
+- Allow user to choose favorites 
+- Save their choices in aws
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### PostMVP 
+
+- Anything else that is not MVP
+
+## Functional Components
+
+Based on the initial logic defined in the previous sections try and breakdown the logic further into functional components, and by that we mean functions.  Try and capture what logic would need to be defined if the game was broken down into the following categories.
+
+Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe.
+
+#### MVP
+| Component | Priority | Estimated Time | Actual Time |
+| --- | :---: |  :---: | :---: | 
+| login | H | 5hr | hr |
+| Graphql | H | 5hr | hr |
+| Regular Nav | H | 5hr | hr |  
+| Adding Form | H | 5hr|  hr | 
+| Other sections and flex| M | 3hr | hr|
+| Added info to  API | H | 8hrs|  hr | 
+| Responsive | H | 5hr | hr | hr |
+| Social Media Icons | L | 8hr |  hr |
+| Total | H | 41.5hrs| hrs |
+
+#### PostMVP
+| Component | Priority | Estimated Time | Actual Time |
+| --- | :---: |  :---: | :---: | 
+| Project Hover | L | 3hr | -hr | hr |
+| Banner letters wiggle | L | 1hr | hr |
+| Interactive Banner | M | 4hr | hr |
+| Materialize | H | 4hr | -hr | hr |
+| Bootstrap | H | 4hr | hr |
+| Make own icon | L | 4hr | hr |
+| Total | H | 20hrs| hrs |
+
+## Additional Libraries
+ Use this section to list all supporting libraries and thier role in the project. 
+
+## Code Snippet
+
+Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
+
+```
+function reverse(string) {
+	// here is the code to reverse a string of text
+}
+```
+
+## Issues and Resolutions
+ Use this section to list of all major issues encountered and their resolution.
+
+#### SAMPLE.....
+**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
+**RESOLUTION**: Missing comma after first object in sources {} object
