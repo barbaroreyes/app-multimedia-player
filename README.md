@@ -21,7 +21,7 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 
 ## Project Description
-dis app show many way to enjoy waching tv
+This app will allow the user to store their favorite multimedia in aws
 
 ## Google Sheet
 
