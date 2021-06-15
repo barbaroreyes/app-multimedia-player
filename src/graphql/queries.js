@@ -7,6 +7,9 @@ export const getMedia = /* GraphQL */ `
       id
       Title
       description
+      filePath
+      like
+      owner
       createdAt
       updatedAt
     }
@@ -23,6 +26,9 @@ export const listMedias = /* GraphQL */ `
         id
         Title
         description
+        filePath
+        like
+        owner
         createdAt
         updatedAt
       }

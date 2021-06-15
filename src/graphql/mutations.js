@@ -10,6 +10,9 @@ export const createMedia = /* GraphQL */ `
       id
       Title
       description
+      filePath
+      like
+      owner
       createdAt
       updatedAt
     }
@@ -24,6 +27,9 @@ export const updateMedia = /* GraphQL */ `
       id
       Title
       description
+      filePath
+      like
+      owner
       createdAt
       updatedAt
     }
@@ -38,6 +44,9 @@ export const deleteMedia = /* GraphQL */ `
       id
       Title
       description
+      filePath
+      like
+      owner
       createdAt
       updatedAt
     }
