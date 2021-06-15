@@ -1,10 +1,24 @@
-import React from 'react'
-import Amplyfy from 'aws-amplify';
+import React ,{useState,useEffect}from 'react'
+import Amplyfy, { API, graphqlOperation } from 'aws-amplify';
 import awsconfig from "./aws-exports";
 import {AmplifySignOut,withAuthenticator} from '@aws-amplify/ui-react'
+import {listMedias} from './graphql/queries'
 import './App.css';
 Amplyfy.configure(awsconfig)
 function App() {
+  useEffect(()=>{
+    getAll()
+  },[])
+const getAll = async() =>{
+try {
+  const mediaData = await API.graphql(graphqlOperation(listMedias))
+  console.log(mediaData)
+  console.log()
+} catch (error) {
+  console.log('error',error)
+}
+}
+
   return (
     <div className="App">
       <header className="App-header">
