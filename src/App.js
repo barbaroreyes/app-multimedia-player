@@ -5,6 +5,7 @@ import {AmplifySignOut,withAuthenticator} from '@aws-amplify/ui-react'
 import {listMedias} from './graphql/queries';
 import {Paper,IconButton,} from '@material-ui/core';
 import PlayArrow from '@material-ui/icons/PlayArrow'
+import FavoriteIcon from '@material-ui/icons/Favorite';
 import './App.css';
 Amplyfy.configure(awsconfig)
 function App() {
@@ -26,10 +27,11 @@ try {
 
   return (
     <div className="App">
-      <header >
+      <header className='App-header'>
        <AmplifySignOut/>
        <h2>My app Content</h2>
       </header>
+      <div className='mediaList'>
       {media.map((item,i)=>{
         return(<Paper 
           variant="outlined"
@@ -39,10 +41,25 @@ try {
             <IconButton aria-label='play'>
               <PlayArrow/>
           </IconButton>
+          <div>
           <div className='Title'>{item.Title}</div>
+          <div className='owner'>{item.owner}</div>
+          </div>
+          <div>
+          <IconButton aria-label='like'>
+              <FavoriteIcon/>
+          </IconButton>
+          {item.like}
+          </div>
+          <div className='description'>
+           {item.description}
+          </div>
+         
+
           </div>
           </Paper>)
       })}
+      </div>
     </div>
   );
 }
