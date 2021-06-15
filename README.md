@@ -15,8 +15,8 @@ You are **responsible** for scheduling time with your squad to seek approval for
 |Day 1| Project Description | completed
 |Day 1| Wireframes / Priority Matrix / Timeline | completed
 |Day 3| Core Application Structure (React,AWS, Graphsql) | complete
-|Day 4| MVP & Bug Fixes | complete
-|Day 5| Final Touches | complete
+|Day 4| MVP & Bug Fixes | Incomplete
+|Day 5| Final Touches | Incomplete
 |Day 6| Present | Incomplete
 
 
@@ -114,14 +114,18 @@ Time frames are also key in the development cycle.  You have limited time to cod
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
+const getAll = async() =>{
+try {
+  const mediaData = await API.graphql(graphqlOperation(listMedias))
+  const mediaList = mediaData.data.listMedias.items
+  console.log('media list',mediaList)
+  setMedia(mediaList)
+  console.log()
+} catch (error) {
+  console.log('error',error)
+}
 }
 ```
 
-## Issues and Resolutions
- Use this section to list of all major issues encountered and their resolution.
 
-#### SAMPLE.....
-**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
-**RESOLUTION**: Missing comma after first object in sources {} object
+
