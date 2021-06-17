@@ -11,10 +11,9 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import  PauseIcon from '@material-ui/icons/Pause';
 import  AddIcon from '@material-ui/icons/Add';
 import PublishIcon  from '@material-ui/icons/Publish';
-
 import ReactPlayer from 'react-player';
-
 import './App.css';
+
 Amplyfy.configure(awsconfig)
 
 function App() {
